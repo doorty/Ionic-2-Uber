@@ -1,0 +1,58 @@
+<ion-navbar *navbar>
+  <ion-buttons start>
+    <button [hidden]="!isPickupRequested" (click)="cancelPickup()">
+      <ion-icon name="arrow-back"></ion-icon> Cancel
+    </button>
+  </ion-buttons>
+  <ion-title>
+    <span [hidden]="isPickupRequested">PickMeUp</span>
+    <span [hidden]="!isPickupRequested">On the way...</span> 
+  </ion-title>
+  <ion-buttons end>
+    <button (click)="map.centerLocation()">
+      <ion-icon name="navigate"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-navbar>
+
+<ion-content class="home">
+  <div class="map-wrapper">
+    <map #map 
+      [isPickupRequested]="isPickupRequested"
+      [destination]="destination">
+   </map>
+   <destination-address
+      [hidden]="!isRiderPickedUp"
+      (newDest)="setDestination($event)">
+   </destination-address>
+  </div>
+  
+  <div class="bottom request-controls">
+    <ion-row>
+      <ion-col width-50>
+        <button block light>
+          <ion-icon name="card"></ion-icon>
+          Visa **34
+        </button>
+      </ion-col>
+      <ion-col width-50>
+        <button block light>
+          <ion-icon name="cash"></ion-icon>
+          Cash
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button [hidden]="isPickupRequested" block primary (click)="confirmPickup()">Request Pickup</button>
+        <button [hidden]="!isPickupRequested" block secondary (click)="cancelPickup()">Cancel Pickup</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        PICKUP TIME IS APPROXIMATELY {{timeTillArrival}} MIN
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
+
