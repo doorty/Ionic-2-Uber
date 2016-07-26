@@ -4,5 +4,8 @@
   "ambientDependencies": {
     "es6-shim": "registry:dt/es6-shim#0.31.2+20160317120654",
     "google.maps": "registry:dt/google.maps#3.20.0+20160414124451"
+  },
+  "globalDependencies": {
+    "require": "registry:dt/require#2.1.20+20160316155526"
   }
 }

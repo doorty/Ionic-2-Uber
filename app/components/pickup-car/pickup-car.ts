@@ -1,7 +1,8 @@
 import {Component, Input, OnInit, OnChanges} from 'angular2/core';
 import {CarService} from '../../providers/car/car';
-import SlidingMarker = require('marker-animate-unobtrusive');
+import * as SlidingMarker from 'marker-animate-unobtrusive';
 import {PickupPubSub} from '../../providers/pickup-pub-sub/pickup-pub-sub';
+
 
 @Component({
   selector: 'pickup-car',
@@ -13,7 +14,7 @@ export class PickupCarDirective implements OnInit, OnChanges {
   @Input() pickupLocation: google.maps.LatLng;
   @Input() destination: string;
   
-  public pickupCarMarker: SlidingMarker;
+  public pickupCarMarker: any;
   public polylinePath: google.maps.Polyline;
   
   constructor(

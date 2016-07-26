@@ -5,6 +5,7 @@
     "ionic-angular": "2.0.0-beta.6",
     "ionic-native": "^1.1.0",
     "ionicons": "3.0.0",
+    "marker-animate-unobtrusive": "^0.2.8",
     "rxjs": "5.0.0-beta.2"
   },
   "devDependencies": {
@@ -29,7 +30,10 @@
   ],
   "cordovaPlatforms": [
     "ios",
-    "android"
+    {
+      "platform": "android",
+      "locator": "windows"
+    }
   ],
   "name": "pickmeup",
   "description": "PickMeUp: An Ionic project"

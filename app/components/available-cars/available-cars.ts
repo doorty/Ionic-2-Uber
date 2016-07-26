@@ -1,6 +1,6 @@
 import {Component, Input, OnInit, OnChanges} from 'angular2/core';
 import {CarService} from '../../providers/car/car';
-import SlidingMarker = require('marker-animate-unobtrusive');
+import * as SlidingMarker from 'marker-animate-unobtrusive';
 
 @Component({
   selector: 'available-cars',
@@ -53,7 +53,7 @@ export class AvailableCarsDirective implements OnInit {
   updateCarMarker(car) {
     for (var i=0, numOfCars=this.carMarkers.length; i < numOfCars; i++) {
       // find car and update it
-      if (this.carMarkers[i].id === car.id) {
+      if ((<any>this.carMarkers[i]).id === (<any>car).id) {
         this.carMarkers[i].setPosition(new google.maps.LatLng(car.coord.lat, car.coord.lng));
         return;
       }
@@ -69,7 +69,7 @@ export class AvailableCarsDirective implements OnInit {
       .subscribe(carsData => {
         
         if (!this.isPickupRequested) {
-          carsData.cars.forEach( car => {
+          (<any>carsData).cars.forEach( car => {
             this.updateCarMarker(car);
           })
         }
