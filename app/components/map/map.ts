@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from 'angular2/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {Loading, NavController} from 'ionic-angular';
 import {Geolocation} from 'ionic-native';
 import {Observable} from 'rxjs/Observable';

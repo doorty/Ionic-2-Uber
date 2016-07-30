@@ -6,7 +6,7 @@
       <ion-input type="text" [(ngModel)]="enteredAddress"></ion-input>
     </ion-item>
     
-    <ion-item *ngFor="#destination of results" (click)="selectDestination(destination)">
+    <ion-item *ngFor="let destination of results" (click)="selectDestination(destination)">
       {{destination.formatted_address}}
     </ion-item>
   </ion-list>

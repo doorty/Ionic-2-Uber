@@ -1,4 +1,4 @@
-import {Component, Output, EventEmitter} from 'angular2/core';
+import {Component, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'destination-address',
@@ -6,7 +6,7 @@ import {Component, Output, EventEmitter} from 'angular2/core';
 })
 export class DestinationAddressDirective {
   
-  @Output() newDest: EventEmitter<string> = new EventEmitter();
+  @Output() newDest: EventEmitter<string> = new EventEmitter<string>();
   
   public enteredAddress: string;
   public geocoder: google.maps.Geocoder;

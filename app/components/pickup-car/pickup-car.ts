@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, OnChanges} from 'angular2/core';
+import {Component, Input, OnInit, OnChanges} from '@angular/core';
 import {CarService} from '../../providers/car/car';
 import * as SlidingMarker from 'marker-animate-unobtrusive';
 import {PickupPubSub} from '../../providers/pickup-pub-sub/pickup-pub-sub';

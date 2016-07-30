@@ -1,19 +1,21 @@
-<ion-navbar *navbar>
-  <ion-buttons start>
-    <button [hidden]="!isPickupRequested" (click)="cancelPickup()">
-      <ion-icon name="arrow-back"></ion-icon> Cancel
-    </button>
-  </ion-buttons>
-  <ion-title>
-    <span [hidden]="isPickupRequested">PickMeUp</span>
-    <span [hidden]="!isPickupRequested">On the way...</span> 
-  </ion-title>
-  <ion-buttons end>
-    <button (click)="map.centerLocation()">
-      <ion-icon name="navigate"></ion-icon>
-    </button>
-  </ion-buttons>
-</ion-navbar>
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button [hidden]="!isPickupRequested" (click)="cancelPickup()">
+        <ion-icon name="arrow-back"></ion-icon> Cancel
+      </button>
+    </ion-buttons>
+    <ion-title>
+      <span [hidden]="isPickupRequested">PickMeUp</span>
+      <span [hidden]="!isPickupRequested">On the way...</span> 
+    </ion-title>
+    <ion-buttons end>
+      <button (click)="map.centerLocation()">
+        <ion-icon name="navigate"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
 
 <ion-content class="home">
   <div class="map-wrapper">

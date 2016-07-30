@@ -6,6 +6,8 @@
     "google.maps": "registry:dt/google.maps#3.20.0+20160414124451"
   },
   "globalDependencies": {
+    "es6-shim": "registry:dt/es6-shim#0.31.2+20160602141504",
+    "google.maps": "registry:dt/google.maps#3.20.0+20160626235650",
     "require": "registry:dt/require#2.1.20+20160316155526"
   }
 }

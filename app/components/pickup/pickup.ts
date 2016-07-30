@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter, OnChanges, OnInit} from 'angular2/core';
+import {Component, Input, Output, EventEmitter, OnChanges, OnInit} from '@angular/core';
 import {CarService} from '../../providers/car/car';
 import {PickupPubSub} from '../../providers/pickup-pub-sub/pickup-pub-sub';
 import {Observable} from 'rxjs/Observable';
@@ -13,7 +13,7 @@ export class PickupDirective implements OnInit, OnChanges {
   @Input() map: google.maps.Map;
   @Input() isPickupRequested: boolean;
   @Input() destination: string;
-  @Output() updatedPickupLocation: EventEmitter<google.maps.LatLng> = new EventEmitter();
+  @Output() updatedPickupLocation: EventEmitter<google.maps.LatLng> = new EventEmitter<google.maps.LatLng>();
   
   private pickupMarker: google.maps.Marker;
   private popup: google.maps.InfoWindow;

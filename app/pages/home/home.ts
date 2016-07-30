@@ -1,9 +1,10 @@
-import {Page, Alert, NavController} from 'ionic-angular';
+import {Alert, NavController} from 'ionic-angular';
 import {MapDirective} from '../../components/map/map';
 import {PickupPubSub} from '../../providers/pickup-pub-sub/pickup-pub-sub';
 import {DestinationAddressDirective} from '../../components/destination-address/destination-address';
+import {Component} from '@angular/core';
 
-@Page({
+@Component({
   templateUrl: 'build/pages/home/home.html',
   directives: [MapDirective, DestinationAddressDirective],
   providers: [PickupPubSub]
