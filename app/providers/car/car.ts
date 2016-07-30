@@ -1,4 +1,4 @@
-import {Injectable} from 'angular2/core';
+import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Rx';
 import {SimulateService} from '../simulate/simulate';
 import 'rxjs/add/operator/map';
