@@ -3,7 +3,7 @@
     
     <ion-item>
       <ion-label floating>Enter your destination</ion-label>
-      <ion-input type="text" [(ngModel)]="enteredAddress"></ion-input>
+      <ion-input type="text" name="destination" [(ngModel)]="enteredAddress"></ion-input>
     </ion-item>
     
     <ion-item *ngFor="let destination of results" (click)="selectDestination(destination)">

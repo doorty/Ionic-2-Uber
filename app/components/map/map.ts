@@ -1,5 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {Loading, NavController} from 'ionic-angular';
+import {LoadingController, NavController} from 'ionic-angular';
 import {Geolocation} from 'ionic-native';
 import {Observable} from 'rxjs/Observable';
 import {PickupDirective} from '../pickup/pickup';
@@ -22,7 +22,7 @@ export class MapDirective implements OnInit {
   public isMapIdle: boolean;
   public currentLocation: google.maps.LatLng;
   
-  constructor(public nav: NavController) {
+  constructor(public nav: NavController, public loadingCtrl: LoadingController) {
     
   }
   
@@ -53,11 +53,11 @@ export class MapDirective implements OnInit {
   
   getCurrentLocation(): Observable<google.maps.LatLng> {
     
-    let loading = Loading.create({
+    let loading = this.loadingCtrl.create({
       content: 'Locating...'
     });
     
-    this.nav.present(loading);
+    loading.present(loading);
     
     let options = {timeout: 10000, enableHighAccuracy: true};
     

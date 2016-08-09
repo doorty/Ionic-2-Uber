@@ -1,4 +1,4 @@
-import {Alert, NavController} from 'ionic-angular';
+import {AlertController, NavController} from 'ionic-angular';
 import {MapDirective} from '../../components/map/map';
 import {PickupPubSub} from '../../providers/pickup-pub-sub/pickup-pub-sub';
 import {DestinationAddressDirective} from '../../components/destination-address/destination-address';
@@ -19,7 +19,8 @@ export class HomePage {
   
   constructor(
     public nav: NavController, 
-    private pickupPubSub: PickupPubSub) {
+    private pickupPubSub: PickupPubSub,
+    private alertCtrl: AlertController) {
       this.isPickupRequested = false;
       this.isRiderPickedUp = false;
       this.timeTillArrival = 5;
@@ -51,7 +52,7 @@ export class HomePage {
   }
   
   rateDriver() {
-    let prompt = Alert.create({
+    let prompt = this.alertCtrl.create({
       title: 'Rate Driver',
       message: 'Select a rating for your driver',
       inputs: [{
@@ -79,7 +80,7 @@ export class HomePage {
       }]
     });
     
-    this.nav.present(prompt);
+    prompt.present(prompt);
   }
   
   riderDroppedOff() {
